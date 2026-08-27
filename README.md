@@ -12,17 +12,14 @@
 
 ---
 
-An Indonesian Computer Science graduate from UNSW, building in Sydney. The degree
-made me an engineer and the work made me an analyst, and the analyst is the one
-I am betting on.
-
-The engineering is not a hedge. It is the reason I can take a question from the
-raw extract all the way to the thing somebody makes a decision in, without
-handing it to another team halfway and hoping the definitions survive the trip.
+Computer Science graduate from UNSW Sydney, working across analytics and data
+engineering. I take a question from the raw extract through to the dashboard a
+decision is made in, so definitions stay consistent across the whole pipeline
+instead of being handed off midway.
 
 **Now:** Data Analyst and Automation Engineer Intern at **Foresight Analytics**,
-turning LSEG and Bloomberg market data into models the firm reports on, with the
-pipelines running on Azure.
+turning LSEG and Bloomberg market data into the models the firm reports on, with
+the pipelines running on Azure.
 
 **Open to:** Data Analyst, Analytics Engineer and graduate roles in Sydney.
 
@@ -30,46 +27,41 @@ pipelines running on Azure.
 
 ### Data work
 
-Four case studies, each written up in full. Three run on live sources and the
-fourth is generated data, which is labelled as such on the page rather than left
-for you to work out.
+Four case studies, each documented end to end. Three run on live sources; the
+fourth uses generated data, which is labelled as such on the project page.
 
-| Study | What it is | The finding |
+| Study | What it is | Headline finding |
 |---|---|---|
-| [**Woolworths vs Coles Price Analytics**](https://melvindarialyogiana.com/projects/data/grocery) | Competitor benchmarking, a year of prices from two retailers | **7.1%** parity rate in household against 62.5% in pantry. The two chains compete where shoppers can price from memory and barely at all where they cannot |
-| [**Australian Labour Market Dashboard**](https://melvindarialyogiana.com/projects/data/labour-market) | End to end pipeline on live ABS data | **2017**, the year the gender full-time gap started closing for a different reason |
-| [**SaaS Sales &amp; Revenue Analytics**](https://melvindarialyogiana.com/projects/data/saas) | Cohort retention from 12.5K invoices | **37%** of the discount-promo cohort was still a customer at month six. Neighbouring cohorts kept about 71% |
-| [**YouTube Trending Analytics**](https://melvindarialyogiana.com/projects/data/youtube) | Forensics on 40,000 trending videos | **38 hours** is how long the average video survives on the Trending page before it vanishes |
+| [**Woolworths vs Coles Price Analytics**](https://melvindarialyogiana.com/projects/data/grocery) | Competitor benchmarking across a year of prices from two retailers | **7.1%** price parity in household goods against **62.5%** in pantry — the chains compete on items shoppers can price from memory, and barely at all elsewhere |
+| [**Australian Labour Market Dashboard**](https://melvindarialyogiana.com/projects/data/labour-market) | End-to-end pipeline on live ABS data | **2017** marks the point where the gender full-time gap began closing for a different underlying reason |
+| [**SaaS Sales &amp; Revenue Analytics**](https://melvindarialyogiana.com/projects/data/saas) | Cohort retention across 12.5K invoices | **37%** of the discount-promo cohort remained at month six, against roughly **71%** for neighbouring cohorts |
+| [**YouTube Trending Analytics**](https://melvindarialyogiana.com/projects/data/youtube) | Analysis of 40,000 trending videos | **38 hours** is the average time a video survives on the Trending page |
 
-### The one I would open first
+### Featured repository
 
 [**woolworths-vs-coles-analytics**](https://github.com/MelvinDY/woolworths-vs-coles-analytics)
-is the repo I would rather be judged on, because it contains the parts most
-portfolios leave out.
+is the fullest example of how I work, covering collection, matching, validation
+and reporting.
 
-- A collector that has run daily since July 2026, writing one immutable CSV a
-  day, on the rule that **a day nobody collected is never filled in**.
-- Entity resolution across two catalogues: national brands matched on brand,
-  pack size within 2% and a fuzzy name score, home brands held separately as
-  substitutes rather than as the same product. Every accepted pair carries its
-  score, so any match can be pulled up and shown why.
-- A year of history backfilled from an open tracker keyed on the same retailer
-  product ids, and then **checked against my own collected days at 99.97% over
-  22,616 observations** before a single figure was built on it.
-- A **pre-registered** test. The item list and the expected numbers were
-  committed to git before any bucket-level figure was computed, so the commit
-  timestamp proves the predictions came first. Seven of twelve landed in range.
-  The one that failed hardest is the most interesting thing on the page.
-- [`docs/data_quality.md`](https://github.com/MelvinDY/woolworths-vs-coles-analytics/blob/master/docs/data_quality.md),
-  four failures that reached published figures before they were caught, written
-  up in full. One of them **reversed a headline I had already published**, and
-  the correction is on the site rather than quietly applied. Every test in the
-  project passed on all four.
+- **Daily collection since July 2026**, writing one immutable CSV per day. Days
+  with no collection are recorded as missing and never backfilled with estimates.
+- **Entity resolution across two catalogues.** National brands are matched on
+  brand, pack size within 2% and a fuzzy name score; home brands are held
+  separately as substitutes rather than treated as the same product. Every
+  accepted pair stores its match score, so any pairing can be audited.
+- **A year of history backfilled** from an open tracker keyed on the same
+  retailer product IDs, then validated against independently collected days at
+  **99.97% agreement over 22,616 observations** before any figure was built on it.
+- **A pre-registered test.** The item list and expected values were committed to
+  git before any bucket-level figure was computed, so the commit timestamps
+  establish that the predictions came first. Seven of twelve fell within range;
+  the largest miss is analysed in detail.
+- [**docs/data_quality.md**](https://github.com/MelvinDY/woolworths-vs-coles-analytics/blob/master/docs/data_quality.md)
+  documents four defects that reached published figures before being caught. One
+  reversed a previously published headline, and the correction is published
+  alongside it. The full test suite passed in all four cases.
 
 ### Software
-
-The analyst half is the bet, but the engineering is what makes the analysis
-shippable, so it gets a section.
 
 | Project | What it is | Stack |
 |---|---|---|
@@ -80,8 +72,8 @@ shippable, so it gets a section.
 | [**Ignite**](https://github.com/MelvinDY/ignite) | The official PPIA UNSW platform, carrying member profiles, event tooling and a directory for the Indonesian student community | Next.js, TypeScript |
 | [**OnlyCode**](https://github.com/tangkenzee/OnlyCode) | Gamified peer-to-peer coding platform with real-time collaboration, skill-based matchmaking and sandboxed execution | React, TypeScript, WebSocket |
 
-Podium and DORA carry no link because their repos are private. Those two, Haven
-and the rest are described in full at
+Podium and DORA are in private repositories. Both, along with Haven and other
+work, are documented at
 [melvindarialyogiana.com/projects/software](https://melvindarialyogiana.com/projects/software).
 
 ### Tech
@@ -121,10 +113,8 @@ and the rest are described in full at
 - Previously Software Developer on Podium (UNSW COMP3900 capstone with
   Atlassian) and Frontend Lead at PPIA UNSW.
 
-Three hackathons, four awards: **1st place** at the CSESoc Flagship Hackathon
-2025 for [OnlyCode](https://github.com/tangkenzee/OnlyCode); **Most Fun Idea and
-3rd Best Design** at UNIHACK 2026 for
-[Peersuade](https://devpost.com/software/peersuade), across 1,010 participants
-from 20+ universities; and the **Golden Rubbish Bin** for best terrible idea at
-the UNSW Terrible Ideas Hackathon for
-[Stall Wars](https://github.com/MelvinDY/Stall_Wars).
+**Awards** — 1st place, CSESoc Flagship Hackathon 2025
+([OnlyCode](https://github.com/tangkenzee/OnlyCode)); Most Fun Idea and 3rd Best
+Design, UNIHACK 2026 ([Peersuade](https://devpost.com/software/peersuade)),
+across 1,010 participants from 20+ universities; Golden Rubbish Bin, UNSW
+Terrible Ideas Hackathon ([Stall Wars](https://github.com/MelvinDY/Stall_Wars)).
